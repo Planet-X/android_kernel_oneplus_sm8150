@@ -112,6 +112,9 @@ static void op_clean_dash_status(void);
 	|| typec_mode == POWER_SUPPLY_TYPEC_SOURCE_HIGH)	\
 	&& !chg->typec_legacy)
 
+bool usb_fc = false;
+module_param(usb_fc, bool, 0644);
+
 static void update_sw_icl_max(struct smb_charger *chg, int pst);
 
 int smblib_read(struct smb_charger *chg, u16 addr, u8 *val)
@@ -1488,6 +1491,9 @@ int smblib_set_icl_current(struct smb_charger *chg, int icl_ua)
 	bool suspend = (icl_ua <= USBIN_25MA);
 
 	pr_info("icl_ua=%d\n", icl_ua);
+
+	if (icl_ua == USBIN_500MA && usb_fc)
+		icl_ua = USBIN_900MA;
 
 	if (chg->connector_type == POWER_SUPPLY_CONNECTOR_TYPEC) {
 		rc = smblib_masked_write(chg, USB_CMD_PULLDOWN_REG,
