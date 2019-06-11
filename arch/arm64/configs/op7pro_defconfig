@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 4.14.123 Kernel Configuration
+# Linux/arm64 4.14.125 Kernel Configuration
 #
 CONFIG_ARM64=y
 CONFIG_64BIT=y
@@ -6004,7 +6004,7 @@ CONFIG_PKCS7_MESSAGE_PARSER=y
 #
 CONFIG_MODULE_SIG_KEY="certs/signing_key.pem"
 CONFIG_SYSTEM_TRUSTED_KEYRING=y
-CONFIG_SYSTEM_TRUSTED_KEYS=""
+CONFIG_SYSTEM_TRUSTED_KEYS="certs/planet9_key.x509.pem"
 # CONFIG_SYSTEM_EXTRA_CERTIFICATE is not set
 # CONFIG_SECONDARY_TRUSTED_KEYRING is not set
 # CONFIG_SYSTEM_BLACKLIST_KEYRING is not set
