@@ -194,7 +194,6 @@ static int __init cma_activate_area(struct cma *cma)
 
 	return 0;
 
-not_in_zone:
 	pr_err("CMA area %s could not be activated\n", cma->name);
 	kfree(cma->bitmap);
 	cma->count = 0;
