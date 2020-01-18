@@ -73,7 +73,7 @@
 #define KEY_GESTURE_SWIPE_DOWN      KEY_F6
 #define KEY_GESTURE_SWIPE_RIGHT     KEY_F7
 #define KEY_GESTURE_SWIPE_UP        KEY_F8
-#define KEY_GESTURE_SINGLE_TAP      KEY_F9
+#define KEY_GESTURE_SINGLE_TAP      260
 
 #define BIT0 (0x1 << 0)
 #define BIT1 (0x1 << 1)
